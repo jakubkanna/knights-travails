@@ -14,6 +14,10 @@ Checks if position is on the game board
 
 Finds the shortest path from the desired start to the end position using the BFS algorithm, resulting in a complexity of O(n).
 
+### msg
+
+Generates success message.
+
 ## Installation
 
 To install the necessary dependencies, use the following command:

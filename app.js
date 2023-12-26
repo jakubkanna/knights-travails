@@ -44,14 +44,7 @@ function knightTravails(start, end) {
     const current = currentPath[currentPath.length - 1]; // The last element of currentPath
 
     // If the end has been found
-    if (current[0] === end[0] && current[1] === end[1]) {
-      // Render positions [x, y] and join them with ->
-      return `You made it in ${
-        currentPath.length - 1
-      } moves! Here's your path: ${currentPath
-        .map((vertex) => `[${vertex.join(", ")}]`)
-        .join(" -> ")}`;
-    }
+    if (current[0] === end[0] && current[1] === end[1]) return msg(currentPath);
 
     visited.add(current);
 
@@ -67,6 +60,17 @@ function knightTravails(start, end) {
   }
 
   return "No valid path found.";
+}
+
+function msg(currentPath) {
+  // Render positions [x, y] and join them with ->
+  const message = `You made it in ${
+    currentPath.length - 1
+  } moves! Here's your path: ${currentPath
+    .map((vertex) => `[${vertex.join(", ")}]`)
+    .join(" -> ")}`;
+
+  return message;
 }
 
 console.log(knightTravails([0, 0], [3, 3]));
